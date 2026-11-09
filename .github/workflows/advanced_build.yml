@@ -261,6 +261,7 @@ jobs:
         run: |
          # Define the config file path
          CONFIG_FILE="arch/arm64/configs/${{ env.DEFCONFIG_NAME }}"
+         echo "CONFIG_MODULES=y" >> "$CONFIG_FILE"
     
          # Remove any existing LTO FULL configuration
          sed -i '/^CONFIG_LTO_CLANG_FULL/d' "$CONFIG_FILE"
